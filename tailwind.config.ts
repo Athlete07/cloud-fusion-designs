@@ -27,7 +27,16 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					100: '#f5f3ff',
+					200: '#ede9fe',
+					300: '#e4ddff',
+					400: '#a29fe2',
+					500: '#837fd8',
+					600: '#645fce',
+					700: '#6d6598',
+					800: '#5a527e',
+					900: '#433d61',
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
@@ -105,6 +114,18 @@ export default {
 				'pulse-light': {
 					'0%, 100%': { opacity: '1' },
 					'50%': { opacity: '0.8' }
+				},
+				'glow': {
+					'0%, 100%': { boxShadow: '0 0 5px rgba(164, 159, 226, 0.5)' },
+					'50%': { boxShadow: '0 0 20px rgba(164, 159, 226, 0.8)' }
+				},
+				'spin-slow': {
+					'100%': { transform: 'rotate(360deg)' }
+				},
+				'morph': {
+					'0%': { borderRadius: '60% 40% 30% 70%/60% 30% 70% 40%' },
+					'50%': { borderRadius: '30% 60% 70% 40%/50% 60% 30% 60%' },
+					'100%': { borderRadius: '60% 40% 30% 70%/60% 30% 70% 40%' }
 				}
 			},
 			animation: {
@@ -116,7 +137,10 @@ export default {
 				'scale-in': 'scale-in 0.7s ease-out',
 				'blur-in': 'blur-in 0.7s ease-out',
 				'float': 'float 6s ease-in-out infinite',
-				'pulse-light': 'pulse-light 4s ease-in-out infinite'
+				'pulse-light': 'pulse-light 4s ease-in-out infinite',
+				'glow': 'glow 3s ease-in-out infinite',
+				'spin-slow': 'spin-slow 12s linear infinite',
+				'morph': 'morph 8s ease-in-out infinite'
 			}
 		}
 	},

@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
-import { Menu, X, Shield, TrendingUp, Star } from "lucide-react";
+import { Menu, X, Shield, Cpu, Sparkles, Code, TerminalSquare } from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -35,28 +35,30 @@ const Header = () => {
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <Link to="/" className="relative z-10">
-          <span className="text-xl font-semibold tracking-tight flex items-center">
-            <Shield className="mr-2 h-5 w-5 text-primary" />
-            <span className="text-gradient">Fusion</span>AI
+          <span className="text-xl font-semibold tracking-tight flex items-center neo-glow">
+            <Cpu className="mr-2 h-5 w-5 text-primary-500" />
+            <span className="text-gradient font-bold">Fusion</span>
+            <span className="text-primary-600 font-bold">AI</span>
           </span>
         </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-1">
-          {["Products", "Solutions", "About", "Contact"].map((item) => (
+          {["Products", "Solutions", "Technology", "Contact"].map((item) => (
             <a
               key={item}
               href={`#${item.toLowerCase()}`}
-              className="px-4 py-2 text-sm font-medium text-foreground/90 rounded-md transition-all hover:text-primary hover:bg-primary/5"
+              className="px-4 py-2 text-sm font-medium text-foreground/90 rounded-md transition-all hover:text-primary-500 hover:bg-primary-100 relative overflow-hidden group"
             >
-              {item}
+              <span className="relative z-10">{item}</span>
+              <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-primary-500 transition-all duration-300 group-hover:w-full"></span>
             </a>
           ))}
           <a
             href="#contact"
-            className="ml-2 px-4 py-2 bg-primary text-white rounded-md shadow-sm button-hover flex items-center"
+            className="ml-2 px-4 py-2 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-md shadow-sm button-hover flex items-center"
           >
-            <TrendingUp className="mr-1 h-4 w-4" /> Contact Us
+            <Sparkles className="mr-1 h-4 w-4" /> Contact Us
           </a>
         </nav>
 
@@ -83,24 +85,25 @@ const Header = () => {
           )}
         >
           <nav className="flex flex-col items-center space-y-6 px-6">
-            {["Products", "Solutions", "About", "Contact"].map(
+            {["Products", "Solutions", "Technology", "Contact"].map(
               (item) => (
                 <a
                   key={item}
                   href={`#${item.toLowerCase()}`}
-                  className="text-lg font-medium text-foreground hover:text-primary"
+                  className="text-lg font-medium text-foreground hover:text-primary-500 relative group"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  {item}
+                  <span>{item}</span>
+                  <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-primary-500 transition-all duration-300 group-hover:w-full"></span>
                 </a>
               )
             )}
             <a
               href="#contact"
-              className="mt-4 px-6 py-3 bg-primary text-white rounded-md shadow-sm button-hover flex items-center"
+              className="mt-4 px-6 py-3 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-md shadow-sm button-hover flex items-center"
               onClick={() => setIsMenuOpen(false)}
             >
-              <TrendingUp className="mr-1 h-4 w-4" /> Contact Us
+              <Sparkles className="mr-1 h-4 w-4" /> Contact Us
             </a>
           </nav>
         </div>
