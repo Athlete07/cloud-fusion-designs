@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Shield, TrendingUp, Award, BarChart3 } from "lucide-react";
 
 const HeroSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -44,12 +44,13 @@ const HeroSection = () => {
             </div>
             
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-balance">
-              Unlock the Power of AI for Your Business
+              Transforming Business with 
+              <span className="text-gradient block mt-2">Enterprise AI</span>
             </h1>
             
             <p className="text-xl text-muted-foreground max-w-md text-pretty">
-              Transform your operations with cutting-edge AI technology that boosts efficiency,
-              drives innovation, and delivers measurable results.
+              Our cutting-edge AI technology delivers measurable ROI, helping businesses achieve 
+              <span className="font-semibold text-primary"> 4x growth</span> in operational efficiency.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
@@ -57,22 +58,33 @@ const HeroSection = () => {
                 href="#solutions"
                 className="inline-flex items-center justify-center px-6 py-3 bg-primary text-white rounded-md shadow-sm button-hover"
               >
-                Discover Our Solutions
+                Investment Opportunities
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>
               <a
-                href="#demo"
+                href="#contact"
                 className="inline-flex items-center justify-center px-6 py-3 bg-white border border-border text-foreground rounded-md shadow-sm button-hover"
               >
-                Request a Demo
+                Contact Us
               </a>
             </div>
             
-            <div className="flex flex-wrap items-center gap-6 pt-4">
-              <p className="text-sm text-muted-foreground">Trusted by leading companies:</p>
-              {[1, 2, 3, 4].map((i) => (
-                <div key={i} className="h-6 w-20 bg-muted-foreground/20 rounded animate-pulse-light"></div>
-              ))}
+            <div className="space-y-4 pt-4">
+              <p className="text-sm font-medium text-muted-foreground">Trusted by leading investors and companies:</p>
+              <div className="flex flex-wrap items-center gap-6">
+                <div className="bg-white shadow-sm rounded-md px-4 py-3 flex items-center">
+                  <Award className="h-5 w-5 text-primary mr-2" />
+                  <span className="text-sm font-medium">Series B Funded</span>
+                </div>
+                <div className="bg-white shadow-sm rounded-md px-4 py-3 flex items-center">
+                  <TrendingUp className="h-5 w-5 text-primary mr-2" />
+                  <span className="text-sm font-medium">120% YoY Growth</span>
+                </div>
+                <div className="bg-white shadow-sm rounded-md px-4 py-3 flex items-center">
+                  <BarChart3 className="h-5 w-5 text-primary mr-2" />
+                  <span className="text-sm font-medium">+200 Enterprise Clients</span>
+                </div>
+              </div>
             </div>
           </div>
           
@@ -87,7 +99,11 @@ const HeroSection = () => {
               </div>
               
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-4xl font-bold text-gradient">AI</div>
+                <div className="flex flex-col items-center">
+                  <Shield className="h-16 w-16 text-primary mb-4" />
+                  <div className="text-4xl font-bold text-gradient">AI</div>
+                  <div className="text-xl mt-2 font-medium">Secure. Scalable. Smart.</div>
+                </div>
               </div>
             </div>
           </div>

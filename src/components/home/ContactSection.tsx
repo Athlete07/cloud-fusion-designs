@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import SectionHeading from "../ui/SectionHeading";
 import { toast } from "sonner";
-import { CheckCircle, AlertCircle, Send, Mail, Phone, MapPin, ArrowRight } from "lucide-react";
+import { CheckCircle, Calendar, Mail, Phone, MapPin, ArrowRight, Users, Briefcase, DollarSign } from "lucide-react";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -10,7 +10,7 @@ const ContactSection = () => {
     email: "",
     company: "",
     message: "",
-    interest: "general"
+    interest: "investor"
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -26,7 +26,7 @@ const ContactSection = () => {
     // Simulate form submission
     setTimeout(() => {
       setIsSubmitting(false);
-      toast.success("Your message has been sent! We'll be in touch soon.", {
+      toast.success("Your message has been sent! Our investor relations team will contact you shortly.", {
         icon: <CheckCircle className="h-4 w-4" />
       });
       setFormData({
@@ -34,7 +34,7 @@ const ContactSection = () => {
         email: "",
         company: "",
         message: "",
-        interest: "general"
+        interest: "investor"
       });
     }, 1500);
   };
@@ -43,13 +43,13 @@ const ContactSection = () => {
     <section className="py-24 bg-background" id="contact">
       <div className="section-container">
         <SectionHeading
-          title="Get in Touch"
-          subtitle="Have questions about our AI solutions? Contact us today to learn how we can help transform your business."
+          title="Investor Relations"
+          subtitle="Connect with our team to learn more about investment opportunities and how our AI solutions are revolutionizing enterprise operations."
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12">
           <div className="bg-white rounded-xl p-8 shadow-sm border border-border">
-            <h3 className="text-xl font-semibold mb-6">Send Us a Message</h3>
+            <h3 className="text-xl font-semibold mb-6">Get in Touch</h3>
             
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -97,7 +97,7 @@ const ContactSection = () => {
                   value={formData.company}
                   onChange={handleChange}
                   className="w-full px-4 py-2 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
-                  placeholder="Your Company"
+                  placeholder="Your Organization"
                 />
               </div>
               
@@ -112,11 +112,11 @@ const ContactSection = () => {
                   onChange={handleChange}
                   className="w-full px-4 py-2 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-white"
                 >
-                  <option value="general">General Inquiry</option>
+                  <option value="investor">Investment Opportunities</option>
+                  <option value="partner">Strategic Partnership</option>
                   <option value="demo">Product Demo</option>
-                  <option value="pricing">Pricing Information</option>
-                  <option value="support">Technical Support</option>
-                  <option value="partnership">Partnership Opportunities</option>
+                  <option value="pricing">Enterprise Solutions</option>
+                  <option value="other">Other</option>
                 </select>
               </div>
               
@@ -152,7 +152,7 @@ const ContactSection = () => {
                 ) : (
                   <span className="flex items-center">
                     Send Message
-                    <Send className="ml-2 h-4 w-4" />
+                    <ArrowRight className="ml-2 h-4 w-4" />
                   </span>
                 )}
               </button>
@@ -161,17 +161,17 @@ const ContactSection = () => {
           
           <div className="space-y-8">
             <div className="bg-white rounded-xl p-8 shadow-sm border border-border h-full flex flex-col">
-              <h3 className="text-xl font-semibold mb-6">Contact Information</h3>
+              <h3 className="text-xl font-semibold mb-6">Investor Relations</h3>
               
               <div className="space-y-6 flex-grow">
                 <div className="flex items-start">
                   <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary flex-shrink-0 mr-4">
-                    <Mail className="h-5 w-5" />
+                    <Briefcase className="h-5 w-5" />
                   </div>
                   <div>
-                    <p className="text-sm text-muted-foreground mb-1">Email Us</p>
-                    <a href="mailto:info@fusionai.com" className="font-medium hover:text-primary transition-colors">
-                      info@fusionai.com
+                    <p className="text-sm text-muted-foreground mb-1">Investor Relations</p>
+                    <a href="mailto:investors@fusionai.com" className="font-medium hover:text-primary transition-colors">
+                      investors@fusionai.com
                     </a>
                   </div>
                 </div>
@@ -181,7 +181,7 @@ const ContactSection = () => {
                     <Phone className="h-5 w-5" />
                   </div>
                   <div>
-                    <p className="text-sm text-muted-foreground mb-1">Call Us</p>
+                    <p className="text-sm text-muted-foreground mb-1">Investor Hotline</p>
                     <a href="tel:+1234567890" className="font-medium hover:text-primary transition-colors">
                       (123) 456-7890
                     </a>
@@ -193,7 +193,7 @@ const ContactSection = () => {
                     <MapPin className="h-5 w-5" />
                   </div>
                   <div>
-                    <p className="text-sm text-muted-foreground mb-1">Visit Us</p>
+                    <p className="text-sm text-muted-foreground mb-1">Headquarters</p>
                     <address className="not-italic font-medium">
                       100 Innovation Way<br />
                       Tech Park, CA 94103
@@ -203,41 +203,51 @@ const ContactSection = () => {
               </div>
               
               <div className="mt-8 pt-8 border-t border-border">
-                <h4 className="font-medium mb-4">Follow Us</h4>
-                <div className="flex space-x-4">
-                  {["linkedin", "twitter", "facebook", "instagram"].map((social) => (
-                    <a
-                      key={social}
-                      href={`#${social}`}
-                      className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-foreground/80 hover:bg-primary hover:text-white transition-colors"
-                    >
-                      <span className="sr-only">{social}</span>
-                      <svg
-                        className="w-5 h-5"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                        aria-hidden="true"
-                      >
-                        <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z" />
-                      </svg>
-                    </a>
-                  ))}
+                <h4 className="font-medium mb-4">Upcoming Investor Events</h4>
+                <div className="space-y-4">
+                  <div className="flex items-start">
+                    <Calendar className="h-5 w-5 text-primary mr-3" />
+                    <div>
+                      <p className="font-medium">Q3 Earnings Call</p>
+                      <p className="text-sm text-muted-foreground">September 15, 2023 • 2:00 PM EST</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <Users className="h-5 w-5 text-primary mr-3" />
+                    <div>
+                      <p className="font-medium">Annual Investor Day</p>
+                      <p className="text-sm text-muted-foreground">October 7, 2023 • New York City</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
             
             <div className="bg-primary/10 rounded-xl p-6 border border-primary/20">
-              <h4 className="font-semibold text-lg mb-3">Schedule a Demo</h4>
-              <p className="text-muted-foreground mb-4">
-                See our AI solutions in action with a personalized demo tailored to your business needs.
-              </p>
-              <a
-                href="#demo"
-                className="inline-flex items-center text-primary font-medium hover:underline"
-              >
-                Request Demo
-                <ArrowRight className="ml-1 h-4 w-4" />
-              </a>
+              <h4 className="font-semibold text-lg mb-3">Investor Resources</h4>
+              <div className="space-y-3">
+                <a
+                  href="#financial-reports"
+                  className="flex items-center text-primary font-medium hover:underline"
+                >
+                  <DollarSign className="h-4 w-4 mr-2" />
+                  Financial Reports
+                </a>
+                <a
+                  href="#investor-deck"
+                  className="flex items-center text-primary font-medium hover:underline"
+                >
+                  <Briefcase className="h-4 w-4 mr-2" />
+                  Investor Presentation
+                </a>
+                <a
+                  href="#press-releases"
+                  className="flex items-center text-primary font-medium hover:underline"
+                >
+                  <Mail className="h-4 w-4 mr-2" />
+                  Press Releases
+                </a>
+              </div>
             </div>
           </div>
         </div>
