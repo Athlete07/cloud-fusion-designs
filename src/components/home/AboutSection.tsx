@@ -59,27 +59,27 @@ const AboutSection = () => {
 
   const timelineItems = [
     {
-      year: "2015",
+      year: "2023",
       title: "Company Founded",
       description: "FusionAI was established with a vision to democratize artificial intelligence for businesses of all sizes."
     },
     {
-      year: "2017",
+      year: "2023",
       title: "First Product Launch",
       description: "Released our flagship analytics platform, helping companies transform their data into actionable insights."
     },
     {
-      year: "2019",
+      year: "2024",
       title: "Global Expansion",
       description: "Opened offices in Europe and Asia to better serve our growing international client base."
     },
     {
-      year: "2021",
+      year: "2024",
       title: "AI Innovation Award",
       description: "Recognized for breakthrough advancements in natural language processing and machine learning algorithms."
     },
     {
-      year: "2023",
+      year: "2025",
       title: "Next-Gen Solutions",
       description: "Launched our comprehensive suite of enterprise AI solutions designed for seamless integration and scalability."
     }
@@ -115,7 +115,7 @@ const AboutSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mt-12">
           <div className="space-y-8">
             <p className="text-lg">
-              Founded by a team of AI researchers and industry veterans, FusionAI has grown from a small startup to a leading provider of enterprise AI solutions. Our commitment to innovation and excellence has earned the trust of organizations worldwide.
+              Founded by a team of AI researchers and industry veterans in 2023, FusionAI has rapidly grown from a startup to a leading provider of enterprise AI solutions. Our commitment to innovation and technical excellence has earned the trust of organizations worldwide.
             </p>
 
             <div ref={valuesRef} className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -174,7 +174,7 @@ const AboutSection = () => {
                   </div>
                   <h4 className="font-medium">Team Member {index}</h4>
                   <p className="text-sm text-muted-foreground">
-                    {["CEO", "CTO", "COO", "CFO"][index - 1]}
+                    {["CEO", "CTO", "COO", "VP of Product"][index - 1]}
                   </p>
                 </div>
               ))}

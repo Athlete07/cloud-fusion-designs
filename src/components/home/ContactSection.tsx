@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import SectionHeading from "../ui/SectionHeading";
 import { toast } from "sonner";
-import { CheckCircle, Calendar, Mail, Phone, MapPin, ArrowRight, Users, Briefcase, DollarSign } from "lucide-react";
+import { CheckCircle, Calendar, Mail, Phone, MapPin, ArrowRight, Users, Briefcase, Code } from "lucide-react";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -10,7 +10,7 @@ const ContactSection = () => {
     email: "",
     company: "",
     message: "",
-    interest: "investor"
+    interest: "demo"
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -26,7 +26,7 @@ const ContactSection = () => {
     // Simulate form submission
     setTimeout(() => {
       setIsSubmitting(false);
-      toast.success("Your message has been sent! Our investor relations team will contact you shortly.", {
+      toast.success("Your message has been sent! Our team will contact you shortly.", {
         icon: <CheckCircle className="h-4 w-4" />
       });
       setFormData({
@@ -34,7 +34,7 @@ const ContactSection = () => {
         email: "",
         company: "",
         message: "",
-        interest: "investor"
+        interest: "demo"
       });
     }, 1500);
   };
@@ -43,8 +43,8 @@ const ContactSection = () => {
     <section className="py-24 bg-background" id="contact">
       <div className="section-container">
         <SectionHeading
-          title="Investor Relations"
-          subtitle="Connect with our team to learn more about investment opportunities and how our AI solutions are revolutionizing enterprise operations."
+          title="Contact Us"
+          subtitle="Get in touch with our team to learn more about how our AI solutions can revolutionize your business operations."
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12">
@@ -112,10 +112,10 @@ const ContactSection = () => {
                   onChange={handleChange}
                   className="w-full px-4 py-2 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-white"
                 >
-                  <option value="investor">Investment Opportunities</option>
-                  <option value="partner">Strategic Partnership</option>
                   <option value="demo">Product Demo</option>
+                  <option value="partner">Strategic Partnership</option>
                   <option value="pricing">Enterprise Solutions</option>
+                  <option value="consulting">Technical Consulting</option>
                   <option value="other">Other</option>
                 </select>
               </div>
@@ -161,7 +161,7 @@ const ContactSection = () => {
           
           <div className="space-y-8">
             <div className="bg-white rounded-xl p-8 shadow-sm border border-border h-full flex flex-col">
-              <h3 className="text-xl font-semibold mb-6">Investor Relations</h3>
+              <h3 className="text-xl font-semibold mb-6">Connect With Us</h3>
               
               <div className="space-y-6 flex-grow">
                 <div className="flex items-start">
@@ -169,9 +169,9 @@ const ContactSection = () => {
                     <Briefcase className="h-5 w-5" />
                   </div>
                   <div>
-                    <p className="text-sm text-muted-foreground mb-1">Investor Relations</p>
-                    <a href="mailto:investors@fusionai.com" className="font-medium hover:text-primary transition-colors">
-                      investors@fusionai.com
+                    <p className="text-sm text-muted-foreground mb-1">Business Inquiries</p>
+                    <a href="mailto:hello@fusionai.com" className="font-medium hover:text-primary transition-colors">
+                      hello@fusionai.com
                     </a>
                   </div>
                 </div>
@@ -181,7 +181,7 @@ const ContactSection = () => {
                     <Phone className="h-5 w-5" />
                   </div>
                   <div>
-                    <p className="text-sm text-muted-foreground mb-1">Investor Hotline</p>
+                    <p className="text-sm text-muted-foreground mb-1">Support Hotline</p>
                     <a href="tel:+1234567890" className="font-medium hover:text-primary transition-colors">
                       (123) 456-7890
                     </a>
@@ -203,20 +203,20 @@ const ContactSection = () => {
               </div>
               
               <div className="mt-8 pt-8 border-t border-border">
-                <h4 className="font-medium mb-4">Upcoming Investor Events</h4>
+                <h4 className="font-medium mb-4">Upcoming Tech Events</h4>
                 <div className="space-y-4">
                   <div className="flex items-start">
                     <Calendar className="h-5 w-5 text-primary mr-3" />
                     <div>
-                      <p className="font-medium">Q3 Earnings Call</p>
-                      <p className="text-sm text-muted-foreground">September 15, 2023 • 2:00 PM EST</p>
+                      <p className="font-medium">AI Summit 2025</p>
+                      <p className="text-sm text-muted-foreground">May 15, 2025 • San Francisco</p>
                     </div>
                   </div>
                   <div className="flex items-start">
                     <Users className="h-5 w-5 text-primary mr-3" />
                     <div>
-                      <p className="font-medium">Annual Investor Day</p>
-                      <p className="text-sm text-muted-foreground">October 7, 2023 • New York City</p>
+                      <p className="font-medium">FusionAI Developer Conference</p>
+                      <p className="text-sm text-muted-foreground">August 7, 2025 • Virtual Event</p>
                     </div>
                   </div>
                 </div>
@@ -224,28 +224,28 @@ const ContactSection = () => {
             </div>
             
             <div className="bg-primary/10 rounded-xl p-6 border border-primary/20">
-              <h4 className="font-semibold text-lg mb-3">Investor Resources</h4>
+              <h4 className="font-semibold text-lg mb-3">Technical Resources</h4>
               <div className="space-y-3">
                 <a
-                  href="#financial-reports"
+                  href="#documentation"
                   className="flex items-center text-primary font-medium hover:underline"
                 >
-                  <DollarSign className="h-4 w-4 mr-2" />
-                  Financial Reports
+                  <Code className="h-4 w-4 mr-2" />
+                  API Documentation
                 </a>
                 <a
-                  href="#investor-deck"
+                  href="#developer-tools"
                   className="flex items-center text-primary font-medium hover:underline"
                 >
                   <Briefcase className="h-4 w-4 mr-2" />
-                  Investor Presentation
+                  Developer Tools
                 </a>
                 <a
-                  href="#press-releases"
+                  href="#tech-blog"
                   className="flex items-center text-primary font-medium hover:underline"
                 >
                   <Mail className="h-4 w-4 mr-2" />
-                  Press Releases
+                  Tech Blog & Updates
                 </a>
               </div>
             </div>
