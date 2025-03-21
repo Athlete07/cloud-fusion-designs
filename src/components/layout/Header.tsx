@@ -24,6 +24,13 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [scrolled]);
 
+  const navItems = [
+    { name: "Products", path: "#products" },
+    { name: "Solutions", path: "#solutions" },
+    { name: "Technology", path: "#technology" },
+    { name: "About", path: "/about" },
+  ];
+
   return (
     <header
       className={cn(
@@ -44,22 +51,22 @@ const Header = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-1">
-          {["Products", "Solutions", "Technology", "About"].map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
+          {navItems.map((item) => (
+            <Link
+              key={item.name}
+              to={item.path}
               className="px-4 py-2 text-sm font-medium text-foreground/90 rounded-md transition-all hover:text-primary-500 hover:bg-primary-100 relative overflow-hidden group"
             >
-              <span className="relative z-10">{item}</span>
+              <span className="relative z-10">{item.name}</span>
               <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-primary-500 transition-all duration-300 group-hover:w-full"></span>
-            </a>
+            </Link>
           ))}
-          <a
-            href="#contact"
+          <Link
+            to="#contact"
             className="ml-2 px-4 py-2 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-md shadow-sm button-hover flex items-center"
           >
             <Sparkles className="mr-1 h-4 w-4" /> Contact Us
-          </a>
+          </Link>
         </nav>
 
         {/* Mobile Hamburger */}
@@ -85,26 +92,24 @@ const Header = () => {
           )}
         >
           <nav className="flex flex-col items-center space-y-6 px-6">
-            {["Products", "Solutions", "Technology", "About"].map(
-              (item) => (
-                <a
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
-                  className="text-lg font-medium text-foreground hover:text-primary-500 relative group"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  <span>{item}</span>
-                  <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-primary-500 transition-all duration-300 group-hover:w-full"></span>
-                </a>
-              )
-            )}
-            <a
-              href="#contact"
+            {navItems.map((item) => (
+              <Link
+                key={item.name}
+                to={item.path}
+                className="text-lg font-medium text-foreground hover:text-primary-500 relative group"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <span>{item.name}</span>
+                <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-primary-500 transition-all duration-300 group-hover:w-full"></span>
+              </Link>
+            ))}
+            <Link
+              to="#contact"
               className="mt-4 px-6 py-3 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-md shadow-sm button-hover flex items-center"
               onClick={() => setIsMenuOpen(false)}
             >
               <Sparkles className="mr-1 h-4 w-4" /> Contact Us
-            </a>
+            </Link>
           </nav>
         </div>
       </div>

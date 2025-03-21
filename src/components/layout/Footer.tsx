@@ -81,7 +81,15 @@ const Footer = () => {
               Company
             </h3>
             <ul className="space-y-2">
-              {["About Us", "Careers", "Partners", "Blog", "Contact"].map((item) => (
+              <li>
+                <Link
+                  to="/about"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  About Us
+                </Link>
+              </li>
+              {["Careers", "Partners", "Blog", "Contact"].map((item) => (
                 <li key={item}>
                   <a
                     href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}
@@ -133,6 +141,12 @@ const Footer = () => {
               © {new Date().getFullYear()} FusionAI. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
+              <Link
+                to="/about"
+                className="text-xs text-muted-foreground hover:text-primary transition-colors"
+              >
+                About Us
+              </Link>
               <a
                 href="#privacy"
                 className="text-xs text-muted-foreground hover:text-primary transition-colors"
@@ -144,12 +158,6 @@ const Footer = () => {
                 className="text-xs text-muted-foreground hover:text-primary transition-colors"
               >
                 Terms of Service
-              </a>
-              <a
-                href="#cookies"
-                className="text-xs text-muted-foreground hover:text-primary transition-colors"
-              >
-                Cookie Policy
               </a>
             </div>
           </div>
