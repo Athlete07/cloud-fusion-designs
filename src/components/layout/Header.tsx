@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
@@ -29,6 +28,7 @@ const Header = () => {
     { name: "Solutions", path: "#solutions" },
     { name: "Technology", path: "#technology" },
     { name: "About", path: "/about" },
+    { name: "Careers", path: "/careers" },
   ];
 
   return (
@@ -44,12 +44,10 @@ const Header = () => {
         <Link to="/" className="relative z-10">
           <span className="text-xl font-semibold tracking-tight flex items-center neo-glow">
             <Cpu className="mr-2 h-5 w-5 text-primary-500" />
-            <span className="text-gradient font-bold">Fusion</span>
-            <span className="text-primary-600 font-bold">AI</span>
+            <span className="text-gradient font-bold">Drehill</span>
           </span>
         </Link>
 
-        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-1">
           {navItems.map((item) => (
             <Link
@@ -69,7 +67,6 @@ const Header = () => {
           </Link>
         </nav>
 
-        {/* Mobile Hamburger */}
         <button
           className="md:hidden relative z-10 p-2"
           onClick={toggleMenu}
@@ -82,7 +79,6 @@ const Header = () => {
           )}
         </button>
 
-        {/* Mobile Navigation */}
         <div
           className={cn(
             "fixed inset-0 bg-white/95 backdrop-blur-card md:hidden flex flex-col justify-center transition-all duration-300 ease-in-out",

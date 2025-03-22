@@ -11,11 +11,11 @@ const Footer = () => {
           <div className="md:col-span-4">
             <Link to="/" className="inline-block mb-4">
               <span className="text-xl font-semibold tracking-tight">
-                <span className="text-gradient">Fusion</span>AI
+                <span className="text-gradient">Drehill</span>
               </span>
             </Link>
             <p className="text-muted-foreground text-sm mb-4 max-w-md">
-              Empowering businesses with cutting-edge AI solutions that transform operations,
+              Empowering businesses with cutting-edge AI solutions and enterprise cloud software that transform operations,
               boost efficiency, and drive innovation in today's digital landscape.
             </p>
             <div className="flex space-x-4">
@@ -45,7 +45,7 @@ const Footer = () => {
               Solutions
             </h3>
             <ul className="space-y-2">
-              {["AI Analytics", "Process Automation", "Cloud Integration", "Machine Learning", "Natural Language"].map((item) => (
+              {["AI Products", "Process Automation", "Cloud Integration", "Machine Learning", "Natural Language"].map((item) => (
                 <li key={item}>
                   <a
                     href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}
@@ -63,7 +63,7 @@ const Footer = () => {
               Industries
             </h3>
             <ul className="space-y-2">
-              {["Healthcare", "Finance", "Manufacturing", "Retail", "Technology"].map((item) => (
+              {["Healthcare", "Manufacturing", "Retail", "Technology", "Education"].map((item) => (
                 <li key={item}>
                   <a
                     href={`#${item.toLowerCase()}`}
@@ -89,7 +89,15 @@ const Footer = () => {
                   About Us
                 </Link>
               </li>
-              {["Careers", "Partners", "Blog", "Contact"].map((item) => (
+              <li>
+                <Link
+                  to="/careers"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  Careers
+                </Link>
+              </li>
+              {["Partners", "Blog", "Contact"].map((item) => (
                 <li key={item}>
                   <a
                     href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}
@@ -125,10 +133,10 @@ const Footer = () => {
               <li className="flex items-center">
                 <Mail className="w-4 h-4 text-primary mr-2" />
                 <a
-                  href="mailto:info@fusionai.com"
+                  href="mailto:info@drehill.com"
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
-                  info@fusionai.com
+                  info@drehill.com
                 </a>
               </li>
             </ul>
@@ -138,7 +146,7 @@ const Footer = () => {
         <div className="pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-xs text-muted-foreground">
-              © {new Date().getFullYear()} FusionAI. All rights reserved.
+              © {new Date().getFullYear()} Drehill Private Limited. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <Link
@@ -146,6 +154,12 @@ const Footer = () => {
                 className="text-xs text-muted-foreground hover:text-primary transition-colors"
               >
                 About Us
+              </Link>
+              <Link
+                to="/careers"
+                className="text-xs text-muted-foreground hover:text-primary transition-colors"
+              >
+                Careers
               </Link>
               <a
                 href="#privacy"
