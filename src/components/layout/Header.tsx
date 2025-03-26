@@ -24,7 +24,7 @@ const Header = () => {
   }, [scrolled]);
 
   const navItems = [
-    { name: "Products", path: "#products" },
+    { name: "Products", path: "/products" },
     { name: "Solutions", path: "#solutions" },
     { name: "Technology", path: "#technology" },
     { name: "About", path: "/about" },
