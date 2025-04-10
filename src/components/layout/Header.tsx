@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
@@ -25,8 +26,7 @@ const Header = () => {
 
   const navItems = [
     { name: "Products", path: "/products" },
-    { name: "Solutions", path: "#solutions" },
-    { name: "Technology", path: "#technology" },
+    { name: "Solutions", path: "/solutions" },
     { name: "About", path: "/about" },
     { name: "Careers", path: "/careers" },
   ];
