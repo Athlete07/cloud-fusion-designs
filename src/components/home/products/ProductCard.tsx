@@ -3,6 +3,7 @@ import React from "react";
 import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
 import { Product } from "@/types/product";
+import { Link } from "react-router-dom";
 
 interface ProductCardProps {
   product: Product;
@@ -25,9 +26,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
       )}
       onMouseEnter={() => onHover(product.id)}
       onMouseLeave={() => onHover(null)}
-      onClick={() => onClick(product)}
     >
-      <div className="p-6">
+      <Link to={`/product/${product.id}`} className="block p-6">
         <div className="text-3xl mb-4">{product.icon}</div>
         <h3 className="text-xl font-semibold mb-2">{product.title}</h3>
         <p className="text-muted-foreground mb-4">{product.shortDesc}</p>
@@ -35,7 +35,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
           Learn more
           <ArrowRight className="ml-1 h-4 w-4 transition-transform duration-300 transform group-hover:translate-x-1" />
         </div>
-      </div>
+      </Link>
       <div
         className={cn(
           "h-1.5 w-full bg-primary/20 relative overflow-hidden",

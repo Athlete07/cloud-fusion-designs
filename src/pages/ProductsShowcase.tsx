@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Layout } from "@/components/layout/Layout";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -142,7 +141,6 @@ const ProductsShowcase = () => {
     
     if (category === "all") return matchesSearch;
     
-    // This would be replaced with actual category filtering logic
     const categoryMapping: Record<string, string[]> = {
       "analytics": ["fusion-analytics", "insight-engine"],
       "automation": ["neural-process", "decision-matrix"],
@@ -162,7 +160,6 @@ const ProductsShowcase = () => {
 
   return (
     <Layout>
-      {/* Hero Section */}
       <section className="bg-gradient-to-b from-background to-secondary/20 pt-24 pb-16">
         <div className="container max-w-7xl mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -213,7 +210,6 @@ const ProductsShowcase = () => {
         </div>
       </section>
 
-      {/* Product Filtering Section */}
       <section className="py-16 bg-white">
         <div className="container max-w-7xl mx-auto px-4">
           <SectionHeading
@@ -248,7 +244,6 @@ const ProductsShowcase = () => {
             </div>
           </div>
 
-          {/* Products Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredProducts.length > 0 ? (
               filteredProducts.map((product) => (
@@ -283,7 +278,7 @@ const ProductsShowcase = () => {
                       >
                         Request Demo
                       </Button>
-                      <Link to={`/products/${product.id}`} className="flex-1">
+                      <Link to={`/product/${product.id}`} className="flex-1">
                         <Button className="w-full group-hover:bg-primary-600 transition-colors">
                           <span>Learn More</span>
                           <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -313,7 +308,6 @@ const ProductsShowcase = () => {
         </div>
       </section>
 
-      {/* Enterprise Benefits Section */}
       <section className="py-16 bg-secondary/30">
         <div className="container max-w-7xl mx-auto px-4">
           <SectionHeading
@@ -353,7 +347,6 @@ const ProductsShowcase = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="py-16 bg-white">
         <div className="container max-w-7xl mx-auto px-4">
           <div className="bg-primary-50 rounded-xl p-8 md:p-12">
