@@ -26,6 +26,7 @@ const Header = () => {
 
   const navItems = [
     { name: "Products", path: "/products" },
+    { name: "Drehill Products", path: "/drehill-products" },
     { name: "Solutions", path: "/solutions" },
     { name: "About", path: "/about" },
     { name: "Careers", path: "/careers" },
