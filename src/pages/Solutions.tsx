@@ -82,32 +82,38 @@ const Solutions = () => {
                 {
                   icon: <Cloud className="text-primary-600 w-8 h-8" />,
                   title: "Cloud Infrastructure",
-                  description: "Scalable and reliable cloud infrastructure designed for enterprise needs with high availability and performance."
+                  description: "Scalable and reliable cloud infrastructure designed for enterprise needs with high availability and performance.",
+                  link: "/solutions/cloud-infrastructure"
                 },
                 {
                   icon: <Layers className="text-primary-600 w-8 h-8" />,
                   title: "Application Modernization",
-                  description: "Transform legacy systems into modern, scalable applications using microservices and cloud-native architectures."
+                  description: "Transform legacy systems into modern, scalable applications using microservices and cloud-native architectures.",
+                  link: "/solutions/application-modernization"
                 },
                 {
                   icon: <Database className="text-primary-600 w-8 h-8" />,
                   title: "Data Management",
-                  description: "End-to-end data solutions from warehousing to analytics and business intelligence for data-driven decisions."
+                  description: "End-to-end data solutions from warehousing to analytics and business intelligence for data-driven decisions.",
+                  link: "/solutions/data-management"
                 },
                 {
                   icon: <BrainCircuit className="text-primary-600 w-8 h-8" />,
                   title: "AI & Machine Learning",
-                  description: "Harness the power of AI to automate processes, gain insights, and create intelligent applications."
+                  description: "Harness the power of AI to automate processes, gain insights, and create intelligent applications.",
+                  link: "/solutions/ai-machine-learning"
                 },
                 {
                   icon: <Network className="text-primary-600 w-8 h-8" />,
                   title: "Integration Services",
-                  description: "Connect disparate systems and applications to create a unified and cohesive technology ecosystem."
+                  description: "Connect disparate systems and applications to create a unified and cohesive technology ecosystem.",
+                  link: "/solutions/integration-services"
                 },
                 {
                   icon: <Terminal className="text-primary-600 w-8 h-8" />,
                   title: "DevOps & Automation",
-                  description: "Streamline development and operations with continuous integration, delivery, and automated workflows."
+                  description: "Streamline development and operations with continuous integration, delivery, and automated workflows.",
+                  link: "/solutions/devops-automation"
                 }
               ].map((solution, index) => (
                 <div key={index} className="bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition-shadow p-6 group">
@@ -116,7 +122,7 @@ const Solutions = () => {
                   </div>
                   <h3 className="text-xl font-semibold mb-3">{solution.title}</h3>
                   <p className="text-foreground/70 mb-4">{solution.description}</p>
-                  <Link to="#" className="text-primary-600 font-medium inline-flex items-center hover:text-primary-700">
+                  <Link to={solution.link} className="text-primary-600 font-medium inline-flex items-center hover:text-primary-700">
                     Learn more
                     <svg className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

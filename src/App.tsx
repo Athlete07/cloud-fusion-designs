@@ -14,6 +14,14 @@ import DrehillProducts from "./pages/DrehillProducts";
 import Solutions from "./pages/Solutions";
 import NotFound from "./pages/NotFound";
 
+// Import Solution Detail Pages
+import CloudInfrastructure from "./pages/solution-details/CloudInfrastructure";
+import ApplicationModernization from "./pages/solution-details/ApplicationModernization";
+import DataManagement from "./pages/solution-details/DataManagement";
+import AiMachineLearning from "./pages/solution-details/AiMachineLearning";
+import IntegrationServices from "./pages/solution-details/IntegrationServices";
+import DevOpsAutomation from "./pages/solution-details/DevOpsAutomation";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -31,6 +39,15 @@ const App = () => (
           <Route path="/products-showcase" element={<ProductsShowcase />} />
           <Route path="/product/:productId" element={<ProductDetail />} />
           <Route path="/solutions" element={<Solutions />} />
+          
+          {/* Solution Detail Routes */}
+          <Route path="/solutions/cloud-infrastructure" element={<CloudInfrastructure />} />
+          <Route path="/solutions/application-modernization" element={<ApplicationModernization />} />
+          <Route path="/solutions/data-management" element={<DataManagement />} />
+          <Route path="/solutions/ai-machine-learning" element={<AiMachineLearning />} />
+          <Route path="/solutions/integration-services" element={<IntegrationServices />} />
+          <Route path="/solutions/devops-automation" element={<DevOpsAutomation />} />
+          
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
