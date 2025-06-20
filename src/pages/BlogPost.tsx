@@ -1,10 +1,10 @@
-
 import React from "react";
 import { useParams, Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock, User, ArrowLeft, Share2 } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 const blogPostsData = {
   "future-of-ai-enterprise-software": {
@@ -299,7 +299,7 @@ const blogPostsData = {
       <p class="mb-6">Establish network segmentation and access controls to limit which systems can communicate with each other. Regular security audits of integration endpoints help identify and address potential vulnerabilities.</p>
       
       <h2 class="text-2xl font-semibold mb-4 mt-8">Real-Time vs. Batch Integration</h2>
-      <p class="mb-4">Choose the appropriate integration pattern based on business requirements. Real-time integration is crucial for customer-facing processes where immediate updates are necessary, while batch processing may be sufficient for reporting and analytics use cases.</p>
+      <p class-4">Choose the appropriate integration pattern based on business requirements. Real-time integration is crucial for customer-facing processes where immediate updates are necessary, while batch processing may be sufficient for reporting and analytics use cases.</p>
       
       <p class="mb-6">Hybrid approaches often work best, using real-time integration for critical business processes and batch processing for bulk data synchronization and historical analysis.</p>
       
@@ -333,7 +333,41 @@ const blogPostsData = {
 
 const BlogPost = () => {
   const { slug } = useParams();
+  const { toast } = useToast();
   const post = slug ? blogPostsData[slug as keyof typeof blogPostsData] : null;
+
+  const handleShare = async () => {
+    const shareData = {
+      title: post?.title || "Drehill Blog",
+      text: post?.title || "Check out this blog post from Drehill",
+      url: window.location.href,
+    };
+
+    try {
+      // Check if Web Share API is supported
+      if (navigator.share) {
+        await navigator.share(shareData);
+        toast({
+          title: "Shared successfully!",
+          description: "The blog post has been shared.",
+        });
+      } else {
+        // Fallback: Copy to clipboard
+        await navigator.clipboard.writeText(window.location.href);
+        toast({
+          title: "Link copied!",
+          description: "The blog post link has been copied to your clipboard.",
+        });
+      }
+    } catch (error) {
+      // If both methods fail, show error
+      toast({
+        title: "Share failed",
+        description: "Unable to share this post. Please copy the URL manually.",
+        variant: "destructive",
+      });
+    }
+  };
 
   if (!post) {
     return (
@@ -392,7 +426,7 @@ const BlogPost = () => {
                   <span>{post.readTime}</span>
                 </div>
               </div>
-              <Button variant="outline" size="sm">
+              <Button variant="outline" size="sm" onClick={handleShare}>
                 <Share2 className="w-4 h-4 mr-2" />
                 Share
               </Button>
