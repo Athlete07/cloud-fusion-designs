@@ -13,6 +13,7 @@ import ProductDetail from "./pages/ProductDetail";
 import DrehillProducts from "./pages/DrehillProducts";
 import Solutions from "./pages/Solutions";
 import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
 
 // Import Solution Detail Pages
@@ -41,6 +42,7 @@ const App = () => (
           <Route path="/product/:productId" element={<ProductDetail />} />
           <Route path="/solutions" element={<Solutions />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
           
           {/* Solution Detail Routes */}
           <Route path="/solutions/cloud-infrastructure" element={<CloudInfrastructure />} />

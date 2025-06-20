@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 const blogPosts = [
   {
     id: 1,
+    slug: "future-of-ai-enterprise-software",
     title: "The Future of AI in Enterprise Software Development",
     excerpt: "Explore how artificial intelligence is revolutionizing the way we build and deploy enterprise applications, from automated code generation to intelligent testing.",
     author: "Sarah Chen",
@@ -21,6 +22,7 @@ const blogPosts = [
   },
   {
     id: 2,
+    slug: "cloud-infrastructure-best-practices",
     title: "Cloud Infrastructure Best Practices for Scalable Applications",
     excerpt: "Learn the essential strategies for building robust cloud infrastructure that can scale with your business needs and maintain high availability.",
     author: "Michael Rodriguez",
@@ -32,6 +34,7 @@ const blogPosts = [
   },
   {
     id: 3,
+    slug: "data-management-strategies",
     title: "Data Management Strategies for Modern Businesses",
     excerpt: "Discover how to effectively manage, analyze, and leverage your business data to drive informed decision-making and competitive advantage.",
     author: "Emma Thompson",
@@ -43,6 +46,7 @@ const blogPosts = [
   },
   {
     id: 4,
+    slug: "machine-learning-process-automation",
     title: "Machine Learning Applications in Process Automation",
     excerpt: "Understanding how machine learning algorithms can transform repetitive business processes into intelligent, self-improving systems.",
     author: "David Kim",
@@ -54,6 +58,7 @@ const blogPosts = [
   },
   {
     id: 5,
+    slug: "devops-transformation",
     title: "DevOps Transformation: From Manual to Automated",
     excerpt: "A comprehensive guide to implementing DevOps practices that streamline development workflows and improve deployment reliability.",
     author: "Jennifer Wilson",
@@ -65,6 +70,7 @@ const blogPosts = [
   },
   {
     id: 6,
+    slug: "integration-services-digital-ecosystem",
     title: "Integration Services: Connecting Your Digital Ecosystem",
     excerpt: "Learn how modern integration platforms can seamlessly connect disparate systems and create a unified digital experience.",
     author: "Alex Johnson",
@@ -162,10 +168,12 @@ const Blog = () => {
                         </Badge>
                       ))}
                     </div>
-                    <Button className="w-full group/btn">
-                      Read More
-                      <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
-                    </Button>
+                    <Link to={`/blog/${post.slug}`}>
+                      <Button className="w-full group/btn">
+                        Read More
+                        <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
+                      </Button>
+                    </Link>
                   </CardContent>
                 </Card>
               ))}
