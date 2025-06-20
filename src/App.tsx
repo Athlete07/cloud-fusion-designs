@@ -12,6 +12,7 @@ import ProductsShowcase from "./pages/ProductsShowcase";
 import ProductDetail from "./pages/ProductDetail";
 import DrehillProducts from "./pages/DrehillProducts";
 import Solutions from "./pages/Solutions";
+import Blog from "./pages/Blog";
 import NotFound from "./pages/NotFound";
 
 // Import Solution Detail Pages
@@ -39,6 +40,7 @@ const App = () => (
           <Route path="/products-showcase" element={<ProductsShowcase />} />
           <Route path="/product/:productId" element={<ProductDetail />} />
           <Route path="/solutions" element={<Solutions />} />
+          <Route path="/blog" element={<Blog />} />
           
           {/* Solution Detail Routes */}
           <Route path="/solutions/cloud-infrastructure" element={<CloudInfrastructure />} />

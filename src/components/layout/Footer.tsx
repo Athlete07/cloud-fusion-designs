@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
@@ -97,16 +96,30 @@ const Footer = () => {
                   Careers
                 </Link>
               </li>
-              {["Partners", "Blog", "Contact"].map((item) => (
-                <li key={item}>
-                  <a
-                    href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    {item}
-                  </a>
-                </li>
-              ))}
+              <li>
+                <a
+                  href="#partners"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  Partners
+                </a>
+              </li>
+              <li>
+                <Link
+                  to="/blog"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  Contact
+                </a>
+              </li>
             </ul>
           </div>
 
